@@ -1,23 +1,23 @@
 package io.ncbpfluffybear.flowerpower;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
-import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
-import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
-import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
+import java.lang.reflect.Field;
+import java.util.logging.Level;
+
+import javax.annotation.Nonnull;
+
 import org.bstats.bukkit.Metrics;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import utils.Constants;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
+import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
 import listeners.Events;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
+import utils.Constants;
 import utils.GlowEnchant;
 import utils.Utils;
-
-import javax.annotation.Nonnull;
-import java.lang.reflect.Field;
-import java.util.logging.Level;
 
 /**
  * The main class of the FlowerPower addon
@@ -40,8 +40,7 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
             return;
         }
 
-        // bStats Metrics
-        final Metrics metrics = new Metrics(this, 12349);
+        new Metrics(this, 12349);
 
         // Read something from your config.yml
         Config cfg = new Config(this);

@@ -1,15 +1,9 @@
 package io.ncbpfluffybear.flowerpower.multiblocks;
 
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.ncbpfluffybear.flowerpower.FlowerPowerItems;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import org.bukkit.Bukkit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,13 +17,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.CauldronLevelChangeEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.ncbpfluffybear.flowerpower.FlowerPowerItems;
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import utils.Constants;
 import utils.ItemStackComparator;
 import utils.Utils;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * A multiblock that stores experience displayed

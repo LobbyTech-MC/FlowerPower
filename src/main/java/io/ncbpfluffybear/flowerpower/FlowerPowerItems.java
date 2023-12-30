@@ -20,7 +20,7 @@ import utils.ItemTags;
 public class FlowerPowerItems {
 
     public static final ItemGroup FLOWERPOWER_CATEGORY = new ItemGroup(new NamespacedKey(FlowerPowerPlugin.getInstance(),
-            "flowerpower_category"), new CustomItemStack(Material.ALLIUM, "&5Flower Power")
+            "flowerpower_category"), new CustomItemStack(Material.ALLIUM, "&5源之花")
     );
     // Multiblocks
     public static final SlimefunItemStack MAGIC_BASIN = new SlimefunItemStack("MAGIC_BASIN",

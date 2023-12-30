@@ -1,5 +1,15 @@
 package io.ncbpfluffybear.flowerpower.items;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Sound;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -7,16 +17,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import io.ncbpfluffybear.flowerpower.objects.FPNotPlaceable;
-import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import org.bukkit.Sound;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import utils.Utils;
-
-import javax.annotation.Nonnull;
 
 /**
  * A {@link io.github.thebusybiscuit.slimefun4.implementation.items.medical.Bandage} that consumes experience
