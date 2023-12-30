@@ -17,21 +17,22 @@ public final class ResearchSetup {
 
     public static void setup() {
 
-        register("magic_crafting", 2711, "Magic Crafting", 5, FlowerPowerItems.MAGIC_BASIN, FlowerPowerItems.MAGICAL_WAND);
-        register("experience_cauldron", 2712, "Experience Cauldron", 5, FlowerPowerItems.EXPERIENCE_CAULDRON);
-        register("glistening_resources", 2713, "Glistening Resources", 10,
+        register("magic_crafting", 2711, "魔法合成", 5, FlowerPowerItems.MAGIC_BASIN, FlowerPowerItems.MAGICAL_WAND);
+        register("experience_cauldron", 2712, "经验之釜", 5, FlowerPowerItems.EXPERIENCE_CAULDRON);
+        register("glistening_resources", 2713, "闪耀的资源", 10,
                 FlowerPowerItems.MAGIC_CREAM, FlowerPowerItems.GLISTENING_POPPY, FlowerPowerItems.GLISTENING_DANDELION,
                 FlowerPowerItems.GLISTENING_OXEYE_DAISY, FlowerPowerItems.GLISTENING_ALLIUM, FlowerPowerItems.RED_CRYSTAL,
                 FlowerPowerItems.YELLOW_CRYSTAL, FlowerPowerItems.WHITE_CRYSTAL, FlowerPowerItems.PURPLE_CRYSTAL
         );
-        register("experience_storage", 2714, "Experience Storage", 50, FlowerPowerItems.EXPERIENCE_TOME);
-        register("attribute_charms", 2715, "Attribute Charms", 50, FlowerPowerItems.MOVEMENT_SPEED_CHARM,
+        register("experience_storage", 2714, "经验存储", 50, FlowerPowerItems.EXPERIENCE_TOME);
+        register("attribute_charms", 2715, "属性符咒", 50, FlowerPowerItems.MOVEMENT_SPEED_CHARM,
                 FlowerPowerItems.ATTACK_SPEED_CHARM, FlowerPowerItems.FLY_SPEED_CHARM, FlowerPowerItems.DAMAGE_CHARM,
                 FlowerPowerItems.HEALTH_CHARM, FlowerPowerItems.KNOCKBACK_RESISTANCE_CHARM
         );
-        register("recall_teleportation", 2716, "Recall Teleportation", 30, FlowerPowerItems.RECALL_CHARM);
-        register("infinity_magic", 2717, "Infinity Magic", 30, FlowerPowerItems.INFINITY_APPLE, FlowerPowerItems.INFINITY_BANDAGE);
-        register("faster_flower_growth", 2718, "Faster Flower Growth", 10, FlowerPowerItems.OVERGROWTH_SEED);
+        register("recall_teleportation", 2716, "召回符咒", 30, FlowerPowerItems.RECALL_CHARM);
+        register("infinity_magic", 2717, "无尽魔法", 30, FlowerPowerItems.INFINITY_APPLE,
+            FlowerPowerItems.INFINITY_BANDAGE);
+        register("faster_flower_growth", 2718, "花卉生长加速", 10, FlowerPowerItems.OVERGROWTH_SEED);
 
     }
 

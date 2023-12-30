@@ -50,7 +50,7 @@ public class OvergrowthSeed extends SimpleSlimefunItem<ItemUseHandler> implement
 
             // Check if it is one of the 4 acceptable flowers
             if (!Constants.flowers.contains(b.getType())) {
-                Utils.send(p, "&cYou can not use this on this block");
+                Utils.send(p, "&c你不能对着该方块使用！");
                 return;
             }
 
@@ -63,7 +63,7 @@ public class OvergrowthSeed extends SimpleSlimefunItem<ItemUseHandler> implement
 
             p.playSound(p.getLocation(), Sound.BLOCK_LAVA_POP, 1, 1);
 
-            Utils.send(p, "&aThis flower starts to grow quickly...");
+            Utils.send(p, "&a这朵花开始生长了...");
 
         };
     }

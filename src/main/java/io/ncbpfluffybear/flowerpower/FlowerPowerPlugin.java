@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
 import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +17,7 @@ import utils.Utils;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
+import java.util.logging.Level;
 
 /**
  * The main class of the FlowerPower addon
@@ -31,14 +33,21 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
 
         instance = this;
 
+        if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+            getLogger().log(Level.SEVERE, "从此处下载: https://50L.cc/gzlib");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         // bStats Metrics
         final Metrics metrics = new Metrics(this, 12349);
 
         // Read something from your config.yml
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "NCBPFluffyBear/FlowerPower/master/").start();
+        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "FlowerPower", "master");
         }
 
         try {
@@ -48,7 +57,7 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
                 accepting.set(null, true);
             }
         } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("Failed to register enchantment.");
+            getLogger().warning("无法注册新的附魔。");
         }
 
         registerGlow();
@@ -82,7 +91,7 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/NCBPFluffyBear/FlowerPower/issues";
+        return "https://github.com/SlimefunGuguProject/FlowerPower/issues";
     }
 
     @Nonnull

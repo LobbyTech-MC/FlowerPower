@@ -31,12 +31,12 @@ public class MagicBasin extends MultiBlockMachine {
 
     @Override
     public void onInteract(Player p, Block b) {
-        Utils.send(p, "&cThis shouldn't be able to happen.");
+        Utils.send(p, "&c未知错误。");
     }
 
     static {
         BASIN_RECIPE = new RecipeType(new NamespacedKey(FlowerPowerPlugin.getInstance(),
-                "magic_basin"), FlowerPowerItems.MAGIC_BASIN,"&7Craft it with a Magic Basin!"
+                "magic_basin"), FlowerPowerItems.MAGIC_BASIN,"&7在魔法坩埚中制作"
         );
     }
 }

@@ -49,7 +49,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.5.0</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -120,6 +120,13 @@
                     <artifactId>*.MF</artifactId> <!-- Exclude MF Files -->
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>net.guizhanss</groupId>
+            <artifactId>GuizhanLibPlugin</artifactId>
+            <version>1.3.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

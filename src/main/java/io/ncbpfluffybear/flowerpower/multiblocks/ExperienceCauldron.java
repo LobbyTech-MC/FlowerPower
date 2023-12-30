@@ -98,7 +98,7 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
         if (SlimefunUtils.isItemSimilar(handItem, FlowerPowerItems.MAGICAL_WAND, false, false)) {
 
             if (cauldronLevel == 0) {
-                Utils.send(p, "&cThis Experience Cauldron is out of experience!");
+                Utils.send(p, "&c经验之釜没有经验了！");
                 return;
             }
 
@@ -112,7 +112,7 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
             }
 
             if (itemFrames.size() != 4) {
-                Utils.send(p, "&cYou need 4 item frames on each side of the Experience Cauldron");
+                Utils.send(p, "&c你需要在经验之釜的四周放置4个物品展示框！");
                 return;
             }
 
@@ -126,7 +126,7 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
             }
 
             // None of the recipes worked
-            Utils.send(p, "&cInvalid Recipe!");
+            Utils.send(p, "&c无效的配方！");
             return;
         }
 
@@ -136,7 +136,7 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
         if (p.isSneaking()) {
             // Check if cauldron is empty
             if (cauldronLevel == 0) {
-                Utils.send(p, "&cThis Experience Cauldron is already empty");
+                Utils.send(p, "&c经验之釜没有经验了！");
                 return;
             }
 
@@ -150,13 +150,13 @@ public class ExperienceCauldron extends SlimefunItem implements Listener {
         // Insert experience into cauldron
         // Exp requirement
         if (exp < EXP_PER_LEVEL) {
-            Utils.send(p, "&cYou do not have enough exp to deposit");
+            Utils.send(p, "&c你没有足够的经验可供存储！");
             return;
         }
 
         // Check if cauldron is full
         if (cauldronLevel == MAX_CAULDRON_LEVEL) {
-            Utils.send(p, "&cThis Experience Cauldron is full");
+            Utils.send(p, "&c经验之釜已满！");
             return;
         }
 

@@ -39,13 +39,13 @@ public class InfinityApple extends SimpleSlimefunItem<ItemUseHandler> implements
 
             // Check if player has enough exp
             if (exp < EXP_PER_CONSUME) {
-                Utils.send(p, "&cYou can not afford this! Needed exp points: " + EXP_PER_CONSUME);
+                Utils.send(p, "&c你没有足够的经验值！需要：" + EXP_PER_CONSUME);
                 return;
             }
 
             // Check if player needs food
             if (foodLevel > 20) {
-                Utils.send(p, "&cYou are already full!");
+                Utils.send(p, "&c你已经饱了！");
                 return;
             }
 

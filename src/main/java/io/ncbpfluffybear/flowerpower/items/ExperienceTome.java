@@ -64,7 +64,7 @@ public class ExperienceTome extends SlimefunItem implements Listener {
 
             // Check if the exp can be extracted from tome
             if (tomeExp == 0) {
-                Utils.send(p, "&cThis Experience Tome is empty!");
+                Utils.send(p, "&c经验之书没有经验！");
                 return;
             }
 
@@ -85,7 +85,7 @@ public class ExperienceTome extends SlimefunItem implements Listener {
         } else {
 
             if (Utils.getTotalExperience(p) == 0) {
-                Utils.send(p, "&cYou don't have enough exp!");
+                Utils.send(p, "&c你没有足够的经验！");
                 return;
             }
 
@@ -105,7 +105,7 @@ public class ExperienceTome extends SlimefunItem implements Listener {
 
             // Check if exp can be added to the tome
             if (tomeExp + transferExp > MAX_EXP || transferExp == 0) {
-                Utils.send(p, "&cThis Experience Tome is full!");
+                Utils.send(p, "&c经验之书已存满");
                 return;
             }
 
@@ -116,7 +116,7 @@ public class ExperienceTome extends SlimefunItem implements Listener {
         }
 
         // Update name to display stored amount
-        tomeMeta.setDisplayName(Utils.color("&eExperience Tome &a(" + tomeExp + " / 1000000)"));
+        tomeMeta.setDisplayName(Utils.color("&e经验之书 &a(" + tomeExp + " / 1000000)"));
         tome.setItemMeta(tomeMeta);
     }
 }
