@@ -1,22 +1,16 @@
 package io.ncbpfluffybear.flowerpower;
 
-import java.lang.reflect.Field;
-import java.util.logging.Level;
-
-import javax.annotation.Nonnull;
-
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
+import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
-import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
 import listeners.Events;
-import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-import utils.Constants;
-import utils.GlowEnchant;
 import utils.Utils;
 
 /**
@@ -45,21 +39,9 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
         // Read something from your config.yml
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
-            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "FlowerPower", "master");
+        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
+            new BlobBuildUpdater(this, getFile(), "FlowerPower", "Dev").start();
         }
-
-        try {
-            if (!Enchantment.isAcceptingRegistrations()) {
-                Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
-                accepting.setAccessible(true);
-                accepting.set(null, true);
-            }
-        } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("无法注册新的附魔。");
-        }
-
-        registerGlow();
 
         // Register events
         Utils.registerEvents(new Events());
@@ -69,18 +51,6 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
 
         // Register all researches
         ResearchSetup.setup();
-    }
-
-    private void registerGlow() {
-        Enchantment glowEnchant = new GlowEnchant(Constants.GLOW_ENCHANT, new String[] {
-                "GLISTENING_POPPY", "GLISTENING_DANDELION", "GLISTENING_OXEYE_DAISY", "GLISTENING_ALLIUM",
-                "OVERGROWTH_SEED", "INFINITY_BANDAGE", "RECALL_CHARM"
-        });
-
-        // Prevent double-registration errors
-        if (Enchantment.getByKey(glowEnchant.getKey()) == null) {
-            Enchantment.registerEnchantment(glowEnchant);
-        }
     }
 
     @Override
