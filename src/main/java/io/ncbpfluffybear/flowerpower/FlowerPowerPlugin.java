@@ -1,15 +1,15 @@
 package io.ncbpfluffybear.flowerpower;
 
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
-import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
-import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
+import java.util.logging.Level;
+
+import javax.annotation.Nonnull;
+
 import org.bstats.bukkit.Metrics;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
+import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
 import listeners.Events;
 import utils.Utils;
 
@@ -37,11 +37,13 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
         new Metrics(this, 12349);
 
         // Read something from your config.yml
+        /*
         Config cfg = new Config(this);
 
         if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
             new BlobBuildUpdater(this, getFile(), "FlowerPower", "Dev").start();
         }
+        */
 
         // Register events
         Utils.registerEvents(new Events());

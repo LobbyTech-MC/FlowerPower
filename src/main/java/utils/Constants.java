@@ -1,13 +1,11 @@
 package utils;
 
-import io.ncbpfluffybear.flowerpower.FlowerPowerPlugin;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 
 /**
  * Stores plugin constants

@@ -1,5 +1,11 @@
 package io.ncbpfluffybear.flowerpower;
 
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.meta.ItemMeta;
+
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
@@ -7,12 +13,6 @@ import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.ncbpfluffybear.flowerpower.items.InfinityApple;
 import io.ncbpfluffybear.flowerpower.items.InfinityBandage;
 import io.ncbpfluffybear.flowerpower.items.RecallCharm;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.meta.ItemMeta;
-import utils.Constants;
 import utils.ItemTags;
 
 /**
